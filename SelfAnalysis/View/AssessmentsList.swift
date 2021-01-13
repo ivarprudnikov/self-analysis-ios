@@ -5,11 +5,29 @@ struct AssessmentsList: View {
     @State private var selection: Assessment?
 
     var body: some View {
-        List(selection: $selection) {
-            ForEach(state.assessments) { assessment in
-                AssessmentRow(assessment: assessment)
+        Group {
+            if state.assessments.isEmpty {
+                Text("What are you waiting for?")
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                List(selection: $selection) {
+                    ForEach(state.assessments) { assessment in
+                        AssessmentRow(assessment: assessment)
+                    }
+                }
             }
         }
+        .navigationTitle("Assessments")
+        .navigationBarItems(
+            trailing:
+                Button(action: {
+                    print("Add button tapped!")
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                    Text("Add")
+                }
+        )
     }
 }
 
@@ -18,9 +36,7 @@ struct AssessmentsList_Previews: PreviewProvider {
         ForEach([ColorScheme.light, .dark], id: \.self) { scheme in
             NavigationView {
                 AssessmentsList()
-                    .navigationTitle("Home")
-                    .environmentObject(AppState().addAssessment(Assessment(id:1))
-                        .addAssessment(Assessment(id:2)))
+                    .environmentObject(AppState())
             }
             .preferredColorScheme(scheme)
         }
