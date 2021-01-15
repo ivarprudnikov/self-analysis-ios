@@ -3,8 +3,6 @@ import SwiftUI
 struct AssessmentRow: View {
     var assessment: Assessment
     
-    @EnvironmentObject private var state: AppState
-    
     var metrics: Metrics {
         return Metrics(cornerRadius: 16, rowPadding: 0, textPadding: 8)
     }
@@ -12,7 +10,7 @@ struct AssessmentRow: View {
     var body: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading) {
-                Text(String(assessment.id))
+                Text(assessment.id?.uuidString ?? "N/A")
                     .font(.headline)
                     .lineLimit(1)
             }
@@ -35,11 +33,10 @@ struct AssessmentRow: View {
 struct AssessmentRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AssessmentRow(assessment: Assessment(id:1))
+            AssessmentRow(assessment: Assessment())
         }
         .frame(width: 250, alignment: .leading)
         .padding(.horizontal)
         .previewLayout(.sizeThatFits)
-        .environmentObject(AppState())
     }
 }

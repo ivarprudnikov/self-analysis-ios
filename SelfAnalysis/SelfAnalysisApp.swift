@@ -2,11 +2,12 @@ import SwiftUI
 
 @main
 struct SelfAnalysisApp: App {
-    @StateObject private var state = AppState()
+    let persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(state)
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

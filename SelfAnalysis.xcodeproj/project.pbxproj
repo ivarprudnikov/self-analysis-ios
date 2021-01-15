@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B62425ABB65C001C298B /* AssessmentsList.swift */; };
-		2260B62B25ABB72C001C298B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B62A25ABB72C001C298B /* AppState.swift */; };
-		2260B62E25ABB8DC001C298B /* Assessment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B62D25ABB8DC001C298B /* Assessment.swift */; };
 		2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B63025ABC539001C298B /* AssessmentRow.swift */; };
 		229731BB25AB2DD90043EA66 /* SelfAnalysisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */; };
 		229731BF25AB2DDA0043EA66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229731BE25AB2DDA0043EA66 /* Assets.xcassets */; };
 		229731C225AB2DDA0043EA66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229731C125AB2DDA0043EA66 /* Preview Assets.xcassets */; };
+		229CEAA525B0FC5700225A0D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 229CEAA325B0FC5700225A0D /* Model.xcdatamodeld */; };
+		229CEAAC25B106CB00225A0D /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229CEAAB25B106CB00225A0D /* PersistenceController.swift */; };
 		229E1DED25AFA01700F19A5C /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DEC25AFA01700F19A5C /* AppTabNavigation.swift */; };
 		229E1DF025AFA0C100F19A5C /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DEF25AFA0C100F19A5C /* About.swift */; };
 		229E1DF525AFA0FB00F19A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DF425AFA0FB00F19A5C /* ContentView.swift */; };
@@ -21,14 +21,14 @@
 
 /* Begin PBXFileReference section */
 		2260B62425ABB65C001C298B /* AssessmentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentsList.swift; sourceTree = "<group>"; };
-		2260B62A25ABB72C001C298B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		2260B62D25ABB8DC001C298B /* Assessment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assessment.swift; sourceTree = "<group>"; };
 		2260B63025ABC539001C298B /* AssessmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentRow.swift; sourceTree = "<group>"; };
 		229731B725AB2DD90043EA66 /* SelfAnalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfAnalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfAnalysisApp.swift; sourceTree = "<group>"; };
 		229731BE25AB2DDA0043EA66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229731C125AB2DDA0043EA66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		229731C325AB2DDA0043EA66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		229CEAA425B0FC5700225A0D /* AssessmentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AssessmentModel.xcdatamodel; sourceTree = "<group>"; };
+		229CEAAB25B106CB00225A0D /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		229E1DEC25AFA01700F19A5C /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
 		229E1DEF25AFA0C100F19A5C /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		229E1DF425AFA0FB00F19A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,15 +52,6 @@
 				229E1DF425AFA0FB00F19A5C /* ContentView.swift */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		2260B62725ABB677001C298B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2260B62A25ABB72C001C298B /* AppState.swift */,
-				2260B62D25ABB8DC001C298B /* Assessment.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2260B62825ABB68A001C298B /* View */ = {
@@ -94,11 +85,12 @@
 			children = (
 				2252248825AE60FD0049A82F /* Navigation */,
 				2260B62825ABB68A001C298B /* View */,
-				2260B62725ABB677001C298B /* Model */,
 				229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */,
 				229731BE25AB2DDA0043EA66 /* Assets.xcassets */,
 				229731C325AB2DDA0043EA66 /* Info.plist */,
 				229731C025AB2DDA0043EA66 /* Preview Content */,
+				229CEAA325B0FC5700225A0D /* Model.xcdatamodeld */,
+				229CEAAB25B106CB00225A0D /* PersistenceController.swift */,
 			);
 			path = SelfAnalysis;
 			sourceTree = "<group>";
@@ -183,11 +175,11 @@
 				229E1DED25AFA01700F19A5C /* AppTabNavigation.swift in Sources */,
 				229731BB25AB2DD90043EA66 /* SelfAnalysisApp.swift in Sources */,
 				229E1DF525AFA0FB00F19A5C /* ContentView.swift in Sources */,
+				229CEAA525B0FC5700225A0D /* Model.xcdatamodeld in Sources */,
 				2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */,
-				2260B62B25ABB72C001C298B /* AppState.swift in Sources */,
 				2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */,
 				229E1DF025AFA0C100F19A5C /* About.swift in Sources */,
-				2260B62E25ABB8DC001C298B /* Assessment.swift in Sources */,
+				229CEAAC25B106CB00225A0D /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +368,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		229CEAA325B0FC5700225A0D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				229CEAA425B0FC5700225A0D /* AssessmentModel.xcdatamodel */,
+			);
+			currentVersion = 229CEAA425B0FC5700225A0D /* AssessmentModel.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Model/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 229731AF25AB2DD90043EA66 /* Project object */;
 }

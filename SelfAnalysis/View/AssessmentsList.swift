@@ -1,23 +1,18 @@
 import SwiftUI
+import CoreData
 
 struct AssessmentsList: View {
-    @EnvironmentObject private var state: AppState
-    @State private var selection: Assessment?
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(entity: Assessment.entity(), sortDescriptors: []) var assessments: FetchedResults<Assessment>
 
     var body: some View {
-        Group {
-            if state.assessments.isEmpty {
-                Text("What are you waiting for?")
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else {
-                List(selection: $selection) {
-                    ForEach(state.assessments) { assessment in
-                        AssessmentRow(assessment: assessment)
-                    }
-                }
+        List {
+            ForEach(self.assessments) { assessment in
+                AssessmentRow(assessment: assessment)
             }
         }
+        .listStyle(PlainListStyle())
         .navigationTitle("Assessments")
         .navigationBarItems(
             trailing:
@@ -28,6 +23,13 @@ struct AssessmentsList: View {
                     Text("Add")
                 }
         )
+        .overlay(Group {
+            if self.assessments.isEmpty {
+                Text("What are you waiting for?")
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        })
     }
 }
 
@@ -35,8 +37,7 @@ struct AssessmentsList_Previews: PreviewProvider {
     static var previews: some View {
         ForEach([ColorScheme.light, .dark], id: \.self) { scheme in
             NavigationView {
-                AssessmentsList()
-                    .environmentObject(AppState())
+                AssessmentsList().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             }
             .preferredColorScheme(scheme)
         }

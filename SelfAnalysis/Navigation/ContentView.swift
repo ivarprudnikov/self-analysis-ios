@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var body: some View {
         AppTabNavigation()
     }
