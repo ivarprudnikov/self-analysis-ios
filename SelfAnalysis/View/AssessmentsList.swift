@@ -3,8 +3,8 @@ import CoreData
 
 struct AssessmentsList: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(entity: Assessment.entity(), sortDescriptors: []) var assessments: FetchedResults<Assessment>
+    @State var showNewAssessmentSheet = false
 
     var body: some View {
         List {
@@ -14,15 +14,12 @@ struct AssessmentsList: View {
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Assessments")
-        .navigationBarItems(
-            trailing:
-                Button(action: {
-                    print("Add button tapped!")
-                }) {
-                    Image(systemName: "plus.circle.fill")
-                    Text("Add")
-                }
-        )
+        .navigationBarItems(trailing: Button(action: {
+            showNewAssessmentSheet = true
+        }, label: {
+            Image(systemName: "plus.circle.fill")
+                .imageScale(.large)
+        }))
         .overlay(Group {
             if self.assessments.isEmpty {
                 Text("What are you waiting for?")
@@ -30,6 +27,9 @@ struct AssessmentsList: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         })
+        .sheet(isPresented: $showNewAssessmentSheet) {
+            CreateAssessmentSheet()
+        }
     }
 }
 
