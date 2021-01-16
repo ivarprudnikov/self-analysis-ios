@@ -11,6 +11,17 @@ struct AssessmentsList: View {
             ForEach(self.assessments) { assessment in
                 AssessmentRow(assessment: assessment)
             }
+            .onDelete { indexSet in
+                for index in indexSet {
+                    let item = assessments[index]
+                    viewContext.delete(item)
+                    do {
+                        try viewContext.save()
+                    } catch let error {
+                        print("Error: \(error)")
+                    }
+                }
+            }
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Assessments")
