@@ -3,7 +3,9 @@ import CoreData
 
 struct AssessmentsList: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: Assessment.entity(), sortDescriptors: []) var assessments: FetchedResults<Assessment>
+    @FetchRequest(entity: Assessment.entity(), sortDescriptors: [
+                    NSSortDescriptor(keyPath: \Assessment.createdAt, ascending: false)
+    ]) var assessments: FetchedResults<Assessment>
     @State var showNewAssessmentSheet = false
 
     var body: some View {
