@@ -3,6 +3,13 @@ import SwiftUI
 struct AssessmentRow: View {
     var assessment: Assessment
     
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        return formatter
+    }()
+    
     var metrics: Metrics {
         return Metrics(cornerRadius: 16, rowPadding: 0, textPadding: 8)
     }
@@ -13,6 +20,8 @@ struct AssessmentRow: View {
                 Text(assessment.id?.uuidString ?? "N/A")
                     .font(.headline)
                     .lineLimit(1)
+                if let createdAt = assessment.createdAt { Text("Created at: " + AssessmentRow.dateFormatter.string(from: createdAt)) }
+                if let updatedAt = assessment.updatedAt { Text("Updated at: " + AssessmentRow.dateFormatter.string(from: updatedAt)) }
             }
             .padding(.vertical, metrics.textPadding)
             
