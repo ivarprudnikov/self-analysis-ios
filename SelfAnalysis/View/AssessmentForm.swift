@@ -1,10 +1,3 @@
-//
-//  AssessmentForm.swift
-//  SelfAnalysis
-//
-//  Created by Aivaras Prudnikovas on 17/01/2021.
-//
-
 import SwiftUI
 
 struct AssessmentForm: View {
