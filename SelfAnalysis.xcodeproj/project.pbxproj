@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224322A925B49E2F00AB7397 /* AssessmentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322A825B49E2F00AB7397 /* AssessmentForm.swift */; };
+		224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */; };
 		2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B62425ABB65C001C298B /* AssessmentsList.swift */; };
 		2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B63025ABC539001C298B /* AssessmentRow.swift */; };
-		2268521825B3518D0085A872 /* CreateAssessmentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268521725B3518D0085A872 /* CreateAssessmentSheet.swift */; };
 		229731BB25AB2DD90043EA66 /* SelfAnalysisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */; };
 		229731BF25AB2DDA0043EA66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229731BE25AB2DDA0043EA66 /* Assets.xcassets */; };
 		229731C225AB2DDA0043EA66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229731C125AB2DDA0043EA66 /* Preview Assets.xcassets */; };
@@ -21,9 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		224322A825B49E2F00AB7397 /* AssessmentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentForm.swift; sourceTree = "<group>"; };
+		224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAddAssessmentButton.swift; sourceTree = "<group>"; };
 		2260B62425ABB65C001C298B /* AssessmentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentsList.swift; sourceTree = "<group>"; };
 		2260B63025ABC539001C298B /* AssessmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentRow.swift; sourceTree = "<group>"; };
-		2268521725B3518D0085A872 /* CreateAssessmentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAssessmentSheet.swift; sourceTree = "<group>"; };
 		229731B725AB2DD90043EA66 /* SelfAnalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfAnalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfAnalysisApp.swift; sourceTree = "<group>"; };
 		229731BE25AB2DDA0043EA66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +64,8 @@
 				2260B62425ABB65C001C298B /* AssessmentsList.swift */,
 				2260B63025ABC539001C298B /* AssessmentRow.swift */,
 				229E1DEF25AFA0C100F19A5C /* About.swift */,
-				2268521725B3518D0085A872 /* CreateAssessmentSheet.swift */,
+				224322A825B49E2F00AB7397 /* AssessmentForm.swift */,
+				224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,7 +185,8 @@
 				2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */,
 				2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */,
 				229E1DF025AFA0C100F19A5C /* About.swift in Sources */,
-				2268521825B3518D0085A872 /* CreateAssessmentSheet.swift in Sources */,
+				224322A925B49E2F00AB7397 /* AssessmentForm.swift in Sources */,
+				224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */,
 				229CEAAC25B106CB00225A0D /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

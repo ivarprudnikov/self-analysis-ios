@@ -6,12 +6,19 @@ struct AssessmentsList: View {
     @FetchRequest(entity: Assessment.entity(), sortDescriptors: [
                     NSSortDescriptor(keyPath: \Assessment.createdAt, ascending: false)
     ]) var assessments: FetchedResults<Assessment>
-    @State var showNewAssessmentSheet = false
+    
+    @State private var selection: Assessment?
 
     var body: some View {
-        List {
+        List(selection: $selection) {
             ForEach(self.assessments) { assessment in
-                AssessmentRow(assessment: assessment)
+                NavigationLink(
+                    destination: AssessmentForm(assessmentId: assessment.id!),
+                    tag: assessment,
+                    selection: $selection
+                ){
+                    AssessmentRow(assessment: assessment)
+                }
             }
             .onDelete { indexSet in
                 for index in indexSet {
@@ -27,22 +34,15 @@ struct AssessmentsList: View {
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Assessments")
-        .navigationBarItems(trailing: Button(action: {
-            showNewAssessmentSheet = true
-        }, label: {
-            Image(systemName: "plus.circle.fill")
-                .imageScale(.large)
-        }))
+        .navigationBarItems(trailing: AsyncAddAssessmentButton())
         .overlay(Group {
             if self.assessments.isEmpty {
-                Text("What are you waiting for?")
+                Text("Your assessments will appear here, please create one first.")
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(32)
             }
         })
-        .sheet(isPresented: $showNewAssessmentSheet) {
-            CreateAssessmentSheet()
-        }
     }
 }
 
