@@ -28,10 +28,19 @@ struct AsyncAddAssessmentButton: View {
         }
     }
     
+    func getLinkDestination() -> AnyView {
+        if let a = self.newAssessment {
+            return AnyView(AssessmentForm(assessment: a))
+        } else {
+            return AnyView(EmptyView())
+        }
+    }
+    
     var body: some View {
+        
         // Navigation will be triggered after $actionState switches to .ready
         NavigationLink(
-            destination: AssessmentForm(assessment: newAssessment),
+            destination: getLinkDestination(),
             tag: .ready,
             selection: $actionState) {
 
