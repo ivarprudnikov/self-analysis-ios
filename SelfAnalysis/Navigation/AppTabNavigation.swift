@@ -1,10 +1,3 @@
-//
-//  AppTabNavigation.swift
-//  SelfAnalysis
-//
-//  Created by Aivaras Prudnikovas on 13/01/2021.
-//
-
 import SwiftUI
 
 struct AppTabNavigation: View {

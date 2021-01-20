@@ -6,7 +6,7 @@ struct AsyncAddAssessmentButton: View {
     
     @State var actionState: ActionState? = .initial
     @State var inProgress: Bool = false
-    @State var newAssessmentId: UUID? = nil
+    @State var newAssessment: Assessment? = nil
     
     enum ActionState: Int {
         case initial = 0
@@ -14,14 +14,14 @@ struct AsyncAddAssessmentButton: View {
     }
     
     // Async action that creates an assessment
-    func onClick(_ completion: @escaping ((UUID?, String?)->())) {
+    func onClick(_ completion: @escaping ((Assessment?, String?)->())) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let newAssessment = Assessment(context: viewContext)
-            newAssessment.createdAt = Date()
-            newAssessment.id = UUID()
+            let a = Assessment(context: viewContext)
+            a.createdAt = Date()
+            a.id = UUID()
             do {
                 try viewContext.save()
-                completion(newAssessment.id, nil)
+                completion(a, nil)
             } catch {
                 completion(nil, error.localizedDescription)
             }
@@ -31,18 +31,18 @@ struct AsyncAddAssessmentButton: View {
     var body: some View {
         // Navigation will be triggered after $actionState switches to .ready
         NavigationLink(
-            destination: AssessmentForm(assessmentId: newAssessmentId),
+            destination: AssessmentForm(assessment: newAssessment),
             tag: .ready,
             selection: $actionState) {
 
             Button(action: {
                 if !self.inProgress {
-                    self.onClick() { uuid, err in
-                        if let id = uuid {
-                            self.newAssessmentId = id
+                    self.onClick() { newAssessment, err in
+                        if let a = newAssessment {
+                            self.newAssessment = a
                             self.actionState = .ready
                         } else {
-                            self.newAssessmentId = nil
+                            self.newAssessment = nil
                             self.actionState = .initial
                         }
                         self.inProgress = false

@@ -13,7 +13,7 @@ struct AssessmentsList: View {
         List(selection: $selection) {
             ForEach(self.assessments) { assessment in
                 NavigationLink(
-                    destination: AssessmentForm(assessmentId: assessment.id!),
+                    destination: AssessmentForm(assessment: assessment),
                     tag: assessment,
                     selection: $selection
                 ){

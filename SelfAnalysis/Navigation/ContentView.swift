@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  SelfAnalysis
-//
-//  Created by Aivaras Prudnikovas on 13/01/2021.
-//
-
 import SwiftUI
 import CoreData
 

@@ -11,6 +11,8 @@
 		224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */; };
 		2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B62425ABB65C001C298B /* AssessmentsList.swift */; };
 		2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B63025ABC539001C298B /* AssessmentRow.swift */; };
+		2278C46B25B8746800856E84 /* questions.schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 2278C46A25B8746800856E84 /* questions.schema.json */; };
+		2278C47025B87E8B00856E84 /* QuestionsSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278C46F25B87E8B00856E84 /* QuestionsSchema.swift */; };
 		229731BB25AB2DD90043EA66 /* SelfAnalysisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */; };
 		229731BF25AB2DDA0043EA66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229731BE25AB2DDA0043EA66 /* Assets.xcassets */; };
 		229731C225AB2DDA0043EA66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229731C125AB2DDA0043EA66 /* Preview Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAddAssessmentButton.swift; sourceTree = "<group>"; };
 		2260B62425ABB65C001C298B /* AssessmentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentsList.swift; sourceTree = "<group>"; };
 		2260B63025ABC539001C298B /* AssessmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentRow.swift; sourceTree = "<group>"; };
+		2278C46A25B8746800856E84 /* questions.schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.schema.json; sourceTree = "<group>"; };
+		2278C46F25B87E8B00856E84 /* QuestionsSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsSchema.swift; sourceTree = "<group>"; };
 		229731B725AB2DD90043EA66 /* SelfAnalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfAnalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfAnalysisApp.swift; sourceTree = "<group>"; };
 		229731BE25AB2DDA0043EA66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2278C46D25B87E3300856E84 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				2278C46A25B8746800856E84 /* questions.schema.json */,
+				2278C46F25B87E8B00856E84 /* QuestionsSchema.swift */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 		229731AE25AB2DD90043EA66 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 		229731B925AB2DD90043EA66 /* SelfAnalysis */ = {
 			isa = PBXGroup;
 			children = (
+				2278C46D25B87E3300856E84 /* json */,
 				2252248825AE60FD0049A82F /* Navigation */,
 				2260B62825ABB68A001C298B /* View */,
 				229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */,
@@ -168,6 +182,7 @@
 			files = (
 				229731C225AB2DDA0043EA66 /* Preview Assets.xcassets in Resources */,
 				229731BF25AB2DDA0043EA66 /* Assets.xcassets in Resources */,
+				2278C46B25B8746800856E84 /* questions.schema.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +200,7 @@
 				2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */,
 				2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */,
 				229E1DF025AFA0C100F19A5C /* About.swift in Sources */,
+				2278C47025B87E8B00856E84 /* QuestionsSchema.swift in Sources */,
 				224322A925B49E2F00AB7397 /* AssessmentForm.swift in Sources */,
 				224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */,
 				229CEAAC25B106CB00225A0D /* PersistenceController.swift in Sources */,
