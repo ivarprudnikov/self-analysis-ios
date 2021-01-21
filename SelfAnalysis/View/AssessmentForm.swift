@@ -37,6 +37,7 @@ struct AssessmentForm: View {
                 ans.assessment = assessment
             }
             ans.value = newValue
+            assessment.updatedAt = Date()
             
             do {
                 try viewContext.save()
