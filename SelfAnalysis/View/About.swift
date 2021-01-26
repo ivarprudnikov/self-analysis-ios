@@ -15,7 +15,7 @@ struct About: View {
             
             Spacer()
         }
-        .padding(16)
+        .padding(20)
         .navigationTitle("About")
     }
 }
