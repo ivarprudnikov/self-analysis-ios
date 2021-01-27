@@ -11,6 +11,7 @@
 		224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */; };
 		2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B62425ABB65C001C298B /* AssessmentsList.swift */; };
 		2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B63025ABC539001C298B /* AssessmentRow.swift */; };
+		2263288725C0E14E00BD2990 /* AssessmentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263288625C0E14E00BD2990 /* AssessmentDetailsView.swift */; };
 		2278C46B25B8746800856E84 /* questions.schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 2278C46A25B8746800856E84 /* questions.schema.json */; };
 		2278C47025B87E8B00856E84 /* QuestionsSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278C46F25B87E8B00856E84 /* QuestionsSchema.swift */; };
 		229731BB25AB2DD90043EA66 /* SelfAnalysisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229731BA25AB2DD90043EA66 /* SelfAnalysisApp.swift */; };
@@ -28,6 +29,7 @@
 		224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAddAssessmentButton.swift; sourceTree = "<group>"; };
 		2260B62425ABB65C001C298B /* AssessmentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentsList.swift; sourceTree = "<group>"; };
 		2260B63025ABC539001C298B /* AssessmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentRow.swift; sourceTree = "<group>"; };
+		2263288625C0E14E00BD2990 /* AssessmentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentDetailsView.swift; sourceTree = "<group>"; };
 		2278C46A25B8746800856E84 /* questions.schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.schema.json; sourceTree = "<group>"; };
 		2278C46F25B87E8B00856E84 /* QuestionsSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsSchema.swift; sourceTree = "<group>"; };
 		229731B725AB2DD90043EA66 /* SelfAnalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfAnalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 				229E1DEF25AFA0C100F19A5C /* About.swift */,
 				224322A825B49E2F00AB7397 /* AssessmentForm.swift */,
 				224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */,
+				2263288625C0E14E00BD2990 /* AssessmentDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				229E1DED25AFA01700F19A5C /* AppTabNavigation.swift in Sources */,
+				2263288725C0E14E00BD2990 /* AssessmentDetailsView.swift in Sources */,
 				229731BB25AB2DD90043EA66 /* SelfAnalysisApp.swift in Sources */,
 				229E1DF525AFA0FB00F19A5C /* ContentView.swift in Sources */,
 				229CEAA525B0FC5700225A0D /* Model.xcdatamodeld in Sources */,

@@ -4,22 +4,21 @@ import CoreData
 struct AssessmentForm: View {
     
     var assessment: Assessment
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    
     var fetchRequest: FetchRequest<Answer>
     var dbAnswers: FetchedResults<Answer> { fetchRequest.wrappedValue }
-    
-    @State private var answers: [String: String] = [:]
-    
-    static let questionSchema: QuestionSchema = {
-        return try! loadQuestionSchema()
-    }()
     
     init(assessment: Assessment) {
         self.assessment = assessment
         self.fetchRequest = FetchRequest<Answer>(entity: Answer.entity(), sortDescriptors: [], predicate: NSPredicate(format: "assessment.id == %@", assessment.id! as CVarArg))
     }
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @State private var answers: [String: String] = [:]
+    @State private var presentingDetailsSheet = false
+    
+    static let questionSchema: QuestionSchema = {
+        return try! loadQuestionSchema()
+    }()
     
     func createBindingToAnswer(forKey key: String) -> Binding<String> {
         return Binding<String>( get: {
@@ -49,16 +48,32 @@ struct AssessmentForm: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Details")) {
-                Text("ID: \(assessment.id?.uuidString ?? "")")
-                if let createdAt = assessment.createdAt { Text("Created at: " + AssessmentRow.dateFormatter.string(from: createdAt)) }
-                if let updatedAt = assessment.updatedAt { Text("Updated at: " + AssessmentRow.dateFormatter.string(from: updatedAt)) }
-            }
             ForEach(AssessmentForm.questionSchema.properties.sorted(by: { $0.key < $1.key }), id: \.key) { key, field in
                 Section(header: Text(field.title), footer: Text(field.description ?? "")) {
                     TextEditor(text: createBindingToAnswer(forKey: key))
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
+                        .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                 }
             }
+        }
+        .navigationBarItems(trailing: Button(action: {
+            presentingDetailsSheet = true
+        }, label: {
+            Text("Details")
+        }))
+        .sheet(isPresented: $presentingDetailsSheet) {
+            VStack(spacing: 0) {
+                AssessmentDetailsView()
+            }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(action: { presentingDetailsSheet = false }) {
+                        Text("Done")
+                    }
+                }
+            }
+            .environmentObject(assessment)
         }
     }
 }
