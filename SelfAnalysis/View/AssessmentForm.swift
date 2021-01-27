@@ -73,12 +73,17 @@ struct AssessmentForm: View {
                 Button(action: {
                     presentingDetailsSheet = true
                 }, label: {
-                    Text("Details")
+                    Image(systemName: "info.circle")
+                        .imageScale(.large)
                 })
             }
             ToolbarItem(placement: .bottomBar) {
-                AssessmentProgress(value: Double(dbAnswers.count), maxValue: Double(AssessmentForm.questionSchema.properties.count))
-                    .frame(width: 100, height: 3, alignment: .center)
+                HStack(alignment: .center, spacing: 40) {
+                    
+                    AssessmentProgress(value: Double(dbAnswers.count), maxValue: Double(AssessmentForm.questionSchema.properties.count))
+                        .frame(width: 100, height: 3, alignment: .center)
+                    
+                }.frame(maxWidth: .infinity)
             }
         })
         .sheet(isPresented: $presentingDetailsSheet) {
