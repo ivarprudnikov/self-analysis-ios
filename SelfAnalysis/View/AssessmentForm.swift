@@ -13,7 +13,6 @@ struct AssessmentForm: View {
     }
     
     @Environment(\.managedObjectContext) private var viewContext
-    @State private var answers: [String: String] = [:]
     @State private var presentingDetailsSheet = false
     
     static let questionSchema: QuestionSchema = {
@@ -49,7 +48,19 @@ struct AssessmentForm: View {
     var body: some View {
         Form {
             ForEach(AssessmentForm.questionSchema.properties.sorted(by: { $0.key < $1.key }), id: \.key) { key, field in
-                Section(header: Text(field.title), footer: Text(field.description ?? "")) {
+                Section {
+                    Text(field.title)
+                        .foregroundColor(.secondary)
+                        .font(.body)
+                        .bold()
+                    
+                    if let description = field.description {
+                        Text(description)
+                            .italic()
+                            .foregroundColor(.secondary)
+                            .font(.footnote)
+                    }
+                    
                     TextEditor(text: createBindingToAnswer(forKey: key))
                         .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                         .disableAutocorrection(true)
@@ -57,11 +68,19 @@ struct AssessmentForm: View {
                 }
             }
         }
-        .navigationBarItems(trailing: Button(action: {
-            presentingDetailsSheet = true
-        }, label: {
-            Text("Details")
-        }))
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    presentingDetailsSheet = true
+                }, label: {
+                    Text("Details")
+                })
+            }
+            ToolbarItem(placement: .bottomBar) {
+                AssessmentProgress(value: Double(dbAnswers.count), maxValue: Double(AssessmentForm.questionSchema.properties.count))
+                    .frame(width: 100, height: 3, alignment: .center)
+            }
+        })
         .sheet(isPresented: $presentingDetailsSheet) {
             VStack(spacing: 0) {
                 AssessmentDetailsView()

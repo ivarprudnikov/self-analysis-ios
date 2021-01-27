@@ -22,6 +22,7 @@
 		229E1DED25AFA01700F19A5C /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DEC25AFA01700F19A5C /* AppTabNavigation.swift */; };
 		229E1DF025AFA0C100F19A5C /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DEF25AFA0C100F19A5C /* About.swift */; };
 		229E1DF525AFA0FB00F19A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DF425AFA0FB00F19A5C /* ContentView.swift */; };
+		22A6180025C2183C007E7A50 /* AssessmentProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A617FF25C2183C007E7A50 /* AssessmentProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		229E1DEC25AFA01700F19A5C /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
 		229E1DEF25AFA0C100F19A5C /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		229E1DF425AFA0FB00F19A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		22A617FF25C2183C007E7A50 /* AssessmentProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				224322A825B49E2F00AB7397 /* AssessmentForm.swift */,
 				224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */,
 				2263288625C0E14E00BD2990 /* AssessmentDetailsView.swift */,
+				22A617FF25C2183C007E7A50 /* AssessmentProgress.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				224322A925B49E2F00AB7397 /* AssessmentForm.swift in Sources */,
 				224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */,
 				229CEAAC25B106CB00225A0D /* PersistenceController.swift in Sources */,
+				22A6180025C2183C007E7A50 /* AssessmentProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
