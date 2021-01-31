@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AssessmentRow: View {
-    var assessment: Assessment
+    @ObservedObject var assessment: Assessment
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
