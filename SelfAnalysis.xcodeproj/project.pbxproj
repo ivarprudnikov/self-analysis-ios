@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222F2BAF25C761AB00E34A03 /* ProgressCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F2BAE25C761AB00E34A03 /* ProgressCircular.swift */; };
 		224322A925B49E2F00AB7397 /* AssessmentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322A825B49E2F00AB7397 /* AssessmentForm.swift */; };
 		224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */; };
 		2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260B62425ABB65C001C298B /* AssessmentsList.swift */; };
@@ -22,10 +23,11 @@
 		229E1DED25AFA01700F19A5C /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DEC25AFA01700F19A5C /* AppTabNavigation.swift */; };
 		229E1DF025AFA0C100F19A5C /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DEF25AFA0C100F19A5C /* About.swift */; };
 		229E1DF525AFA0FB00F19A5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E1DF425AFA0FB00F19A5C /* ContentView.swift */; };
-		22A6180025C2183C007E7A50 /* AssessmentProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A617FF25C2183C007E7A50 /* AssessmentProgress.swift */; };
+		22A6180025C2183C007E7A50 /* ProgressHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A617FF25C2183C007E7A50 /* ProgressHorizontal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		222F2BAE25C761AB00E34A03 /* ProgressCircular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircular.swift; sourceTree = "<group>"; };
 		224322A825B49E2F00AB7397 /* AssessmentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentForm.swift; sourceTree = "<group>"; };
 		224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAddAssessmentButton.swift; sourceTree = "<group>"; };
 		2260B62425ABB65C001C298B /* AssessmentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentsList.swift; sourceTree = "<group>"; };
@@ -43,7 +45,7 @@
 		229E1DEC25AFA01700F19A5C /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
 		229E1DEF25AFA0C100F19A5C /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		229E1DF425AFA0FB00F19A5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		22A617FF25C2183C007E7A50 /* AssessmentProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentProgress.swift; sourceTree = "<group>"; };
+		22A617FF25C2183C007E7A50 /* ProgressHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHorizontal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222F2BA825C75F3C00E34A03 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				22A617FF25C2183C007E7A50 /* ProgressHorizontal.swift */,
+				222F2BAE25C761AB00E34A03 /* ProgressCircular.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		2252248825AE60FD0049A82F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,13 +80,13 @@
 		2260B62825ABB68A001C298B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				222F2BA825C75F3C00E34A03 /* Progress */,
 				2260B62425ABB65C001C298B /* AssessmentsList.swift */,
 				2260B63025ABC539001C298B /* AssessmentRow.swift */,
 				229E1DEF25AFA0C100F19A5C /* About.swift */,
 				224322A825B49E2F00AB7397 /* AssessmentForm.swift */,
 				224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */,
 				2263288625C0E14E00BD2990 /* AssessmentDetailsView.swift */,
-				22A617FF25C2183C007E7A50 /* AssessmentProgress.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,12 +217,13 @@
 				229CEAA525B0FC5700225A0D /* Model.xcdatamodeld in Sources */,
 				2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */,
 				2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */,
+				222F2BAF25C761AB00E34A03 /* ProgressCircular.swift in Sources */,
 				229E1DF025AFA0C100F19A5C /* About.swift in Sources */,
 				2278C47025B87E8B00856E84 /* QuestionsSchema.swift in Sources */,
 				224322A925B49E2F00AB7397 /* AssessmentForm.swift in Sources */,
 				224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */,
 				229CEAAC25B106CB00225A0D /* PersistenceController.swift in Sources */,
-				22A6180025C2183C007E7A50 /* AssessmentProgress.swift in Sources */,
+				22A6180025C2183C007E7A50 /* ProgressHorizontal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

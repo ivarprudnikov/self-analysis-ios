@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AssessmentProgress: View {
+struct ProgressHorizontal: View {
     
     let value: Double
     let maxValue: Double
@@ -34,13 +34,13 @@ struct AssessmentProgress: View {
     }
 }
 
-struct AssessmentProgress_Previews: PreviewProvider {
+struct ProgressHorizontal_Previews: PreviewProvider {
     static var previews: some View {
         ForEach([ColorScheme.light, .dark], id: \.self) { scheme in
             Group {
-                AssessmentProgress(value: 0, maxValue: 100)
-                AssessmentProgress(value: 3, maxValue: 7)
-                AssessmentProgress(value: 10, maxValue: 10)
+                ProgressHorizontal(value: 0, maxValue: 100)
+                ProgressHorizontal(value: 3, maxValue: 7)
+                ProgressHorizontal(value: 10, maxValue: 10)
             }
             .frame(width: 250, height: 10, alignment: .leading)
             .padding(.all)

@@ -80,7 +80,7 @@ struct AssessmentForm: View {
             ToolbarItem(placement: .bottomBar) {
                 HStack(alignment: .center, spacing: 40) {
                     
-                    AssessmentProgress(value: Double(dbAnswers.count), maxValue: Double(AssessmentForm.questionSchema.properties.count))
+                    ProgressHorizontal(value: Double(dbAnswers.count), maxValue: Double(AssessmentForm.questionSchema.properties.count))
                         .frame(width: 100, height: 3, alignment: .center)
                     
                 }.frame(maxWidth: .infinity)

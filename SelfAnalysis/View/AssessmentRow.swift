@@ -15,7 +15,11 @@ struct AssessmentRow: View {
     }
     
     var body: some View {
-        HStack(alignment: .top) {
+        HStack(alignment: .center) {
+            Group {
+                ProgressCircular(value: Double(assessment.answers?.count ?? 0), maxValue: Double(AssessmentForm.questionSchema.properties.count))
+            }
+            .frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             VStack(alignment: .leading) {
                 Text(assessment.id?.uuidString ?? "N/A")
                     .font(.headline)
