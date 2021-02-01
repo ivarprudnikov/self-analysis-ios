@@ -3,6 +3,12 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
 
+    /// To be used in previews where CoreData is needed
+    ///
+    /// ```
+    /// FooView.environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    /// ```
+    /// - Returns: A new `PersistenceController` instance with in-memory storage.
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
