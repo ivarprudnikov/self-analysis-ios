@@ -45,6 +45,26 @@ struct AssessmentForm: View {
         })
     }
     
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    var showDetailsBtn: some View {
+        Button(action: {
+            presentingDetailsSheet = true
+        }, label: {
+            Image(systemName: "info.circle")
+                .imageScale(.large)
+        })
+    }
+    
+    var bottomToolbarProgress: some View {
+        HStack(alignment: .center, spacing: 40) {
+            ProgressHorizontal(value: Double(dbAnswers.count), maxValue: Double(AssessmentForm.questionSchema.properties.count))
+                .frame(width: 100, height: 3, alignment: .center)
+        }.frame(maxWidth: .infinity)
+    }
+    
     var body: some View {
         Form {
             ForEach(AssessmentForm.questionSchema.properties.sorted(by: { $0.key < $1.key }), id: \.key) { key, field in
@@ -68,22 +88,15 @@ struct AssessmentForm: View {
                 }
             }
         }
+        .onTapGesture {
+            self.dismissKeyboard()
+        }
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    presentingDetailsSheet = true
-                }, label: {
-                    Image(systemName: "info.circle")
-                        .imageScale(.large)
-                })
+                showDetailsBtn
             }
             ToolbarItem(placement: .bottomBar) {
-                HStack(alignment: .center, spacing: 40) {
-                    
-                    ProgressHorizontal(value: Double(dbAnswers.count), maxValue: Double(AssessmentForm.questionSchema.properties.count))
-                        .frame(width: 100, height: 3, alignment: .center)
-                    
-                }.frame(maxWidth: .infinity)
+                bottomToolbarProgress
             }
         })
         .sheet(isPresented: $presentingDetailsSheet) {
