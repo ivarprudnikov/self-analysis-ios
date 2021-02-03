@@ -17,7 +17,7 @@ struct AssessmentsList: View {
                     tag: assessment,
                     selection: $selection
                 ){
-                    AssessmentRow(assessment: assessment)
+                    AssessmentRow().environmentObject(assessment)
                 }
             }
             .onDelete { indexSet in

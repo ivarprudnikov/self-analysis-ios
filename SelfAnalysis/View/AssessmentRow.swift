@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AssessmentRow: View {
-    @ObservedObject var assessment: Assessment
+    @EnvironmentObject var assessment: Assessment
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -46,9 +46,10 @@ struct AssessmentRow: View {
 struct AssessmentRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AssessmentRow(assessment: Assessment())
+            AssessmentRow()
+                .environmentObject(PersistenceController.preview.createAssessment())
         }
-        .frame(width: 250, alignment: .leading)
+        .frame(width: 350, alignment: .leading)
         .padding(.horizontal)
         .previewLayout(.sizeThatFits)
     }
