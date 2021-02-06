@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2211A58B25CECF1C007506D3 /* AnswerEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2211A58A25CECF1C007506D3 /* AnswerEditor.swift */; };
+		2211A58E25CED0A9007506D3 /* AnswerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2211A58D25CED0A9007506D3 /* AnswerPreview.swift */; };
+		2211A59325CEDFF9007506D3 /* ResponderChain in Frameworks */ = {isa = PBXBuildFile; productRef = 2211A59225CEDFF9007506D3 /* ResponderChain */; };
 		222F2BAF25C761AB00E34A03 /* ProgressCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F2BAE25C761AB00E34A03 /* ProgressCircular.swift */; };
 		224322A925B49E2F00AB7397 /* AssessmentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322A825B49E2F00AB7397 /* AssessmentForm.swift */; };
 		224322AC25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */; };
@@ -27,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2211A58A25CECF1C007506D3 /* AnswerEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerEditor.swift; sourceTree = "<group>"; };
+		2211A58D25CED0A9007506D3 /* AnswerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerPreview.swift; sourceTree = "<group>"; };
 		222F2BAE25C761AB00E34A03 /* ProgressCircular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircular.swift; sourceTree = "<group>"; };
 		224322A825B49E2F00AB7397 /* AssessmentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentForm.swift; sourceTree = "<group>"; };
 		224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAddAssessmentButton.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2211A59325CEDFF9007506D3 /* ResponderChain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,8 @@
 				224322A825B49E2F00AB7397 /* AssessmentForm.swift */,
 				224322AB25B4AE0C00AB7397 /* AsyncAddAssessmentButton.swift */,
 				2263288625C0E14E00BD2990 /* AssessmentDetailsView.swift */,
+				2211A58A25CECF1C007506D3 /* AnswerEditor.swift */,
+				2211A58D25CED0A9007506D3 /* AnswerPreview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +164,9 @@
 			dependencies = (
 			);
 			name = SelfAnalysis;
+			packageProductDependencies = (
+				2211A59225CEDFF9007506D3 /* ResponderChain */,
+			);
 			productName = SelfAnalysisQuestionsIosApp;
 			productReference = 229731B725AB2DD90043EA66 /* SelfAnalysis.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +194,9 @@
 				Base,
 			);
 			mainGroup = 229731AE25AB2DD90043EA66;
+			packageReferences = (
+				2211A59125CEDFF9007506D3 /* XCRemoteSwiftPackageReference "ResponderChain" */,
+			);
 			productRefGroup = 229731B825AB2DD90043EA66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,9 +226,11 @@
 			files = (
 				229E1DED25AFA01700F19A5C /* AppTabNavigation.swift in Sources */,
 				2263288725C0E14E00BD2990 /* AssessmentDetailsView.swift in Sources */,
+				2211A58B25CECF1C007506D3 /* AnswerEditor.swift in Sources */,
 				229731BB25AB2DD90043EA66 /* SelfAnalysisApp.swift in Sources */,
 				229E1DF525AFA0FB00F19A5C /* ContentView.swift in Sources */,
 				229CEAA525B0FC5700225A0D /* Model.xcdatamodeld in Sources */,
+				2211A58E25CED0A9007506D3 /* AnswerPreview.swift in Sources */,
 				2260B62525ABB65C001C298B /* AssessmentsList.swift in Sources */,
 				2260B63125ABC539001C298B /* AssessmentRow.swift in Sources */,
 				222F2BAF25C761AB00E34A03 /* ProgressCircular.swift in Sources */,
@@ -416,6 +432,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2211A59125CEDFF9007506D3 /* XCRemoteSwiftPackageReference "ResponderChain" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Amzd/ResponderChain";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2211A59225CEDFF9007506D3 /* ResponderChain */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2211A59125CEDFF9007506D3 /* XCRemoteSwiftPackageReference "ResponderChain" */;
+			productName = ResponderChain;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		229CEAA325B0FC5700225A0D /* Model.xcdatamodeld */ = {
