@@ -30,10 +30,12 @@ struct AsyncAddAssessmentButton: View {
     
     func getLinkDestination() -> AnyView {
         if let a = self.newAssessment {
-            return AnyView(AssessmentForm(assessment: a))
-        } else {
-            return AnyView(EmptyView())
+            if a.id != nil {
+                return AnyView(AssessmentForm(assessment: a))
+            }
         }
+        
+        return AnyView(EmptyView())
     }
     
     var body: some View {
