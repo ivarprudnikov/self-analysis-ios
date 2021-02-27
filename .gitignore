@@ -22,3 +22,5 @@ xcuserdata/
 
 .idea/
 *.iml
+
+doc/_site/

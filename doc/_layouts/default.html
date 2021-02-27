@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+  {% include meta.html %}
+  <link rel="stylesheet" type="text/css" href="{{ '/style.css' | prepend: site.baseurl }}"/>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+        href="{{ '/feed.xml' | prepend: site.baseurl }}"/>
+</head>
+<body>
+
+<!-- NAVBAR
+================================================== -->
+<header class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        <img src="./assets/img/self-analysis-app-icon.png" class="navbar-brand-img" alt="{{ site.name }}">
+        {{ site.name }}
+      </a>
+
+      <!-- Button -->
+      <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="https://apps.apple.com/us/app/self-analysis/id1550503112" target="_blank">
+        Buy now
+      </a>
+
+    </div>
+  </nav>
+</header>
+
+<!-- MAIN CONTENT
+================================================== -->
+<div id="main" role="main">
+  {{ content }}
+</div>
+
+<!-- FOOTER
+================================================== -->
+<footer class="py-8 py-md-11 bg-white">
+  <div class="container">
+    <div class="d-flex align-items-start">
+      <small class="text-muted">{{ site.name }} &copy; 2021</small>
+      <span class="mx-auto"></span>
+      <a class="" href="https://github.com/ivarprudnikov/self-analysis-ios/">Source code</a>
+      <a class="ml-4" href="https://github.com/ivarprudnikov/self-analysis-ios/blob/main/PRIVACY.md">Privacy</a>
+      <a class="ml-4" href="https://github.com/ivarprudnikov/self-analysis-ios/blob/main/LICENCE">Licence</a>
+    </div>
+  </div> <!-- / .container -->
+</footer>
+
+{% include analytics.html %}
+</body>
+</html>
